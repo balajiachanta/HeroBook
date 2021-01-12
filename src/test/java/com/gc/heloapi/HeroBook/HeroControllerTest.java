@@ -1,10 +1,19 @@
 package com.gc.heloapi.HeroBook;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
 public class HeroControllerTest {
+
+
+    @Autowired
+    private MockMvc mockMvc;
 
     /*
     List all hero names  - Get Api which return all heros
@@ -12,7 +21,11 @@ public class HeroControllerTest {
      */
 
     @Test
-    public void testGetAllHeroNames(){
+    public void testGetAllHeroNames() throws Exception {
+
+        mockMvc.perform(get("/heros")).andExpect(status().isOk());
+
+
 
 
     }
