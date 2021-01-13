@@ -1,5 +1,8 @@
 package com.gc.heloapi;
 
+import com.gc.heloapi.data.Hero;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -9,7 +12,7 @@ import java.util.NoSuchElementException;
 public class HeroExceptionHandler {
 
     @ExceptionHandler(NoSuchElementException.class)
-    public String handleNotFound() {
-        return "Hero does not exist";
+    public ResponseEntity<String> handleNotFound() {
+        return new ResponseEntity<>("Hero does not Exist", HttpStatus.NOT_FOUND);
     }
 }

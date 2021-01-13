@@ -38,7 +38,7 @@ public class HeroController {
     }
 
     @GetMapping(value = "/{name}")
-    public Hero getHeroByName(@PathVariable String name) throws HeroNotFoundException {
+    public Hero getHeroByName(@PathVariable String name) {
 
             return heroes.stream().filter(hero -> hero.getHeroName().equals(name)).findFirst().get();
 

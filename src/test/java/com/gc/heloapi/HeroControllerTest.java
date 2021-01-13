@@ -15,9 +15,6 @@ public class HeroControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-
-
-
     /*
     List all hero names  - Get Api which return all heros
         - Table - heros with id and names
@@ -33,33 +30,20 @@ public class HeroControllerTest {
     /*
     Create Hero Table and Entity POJO
     Rule: Heroes have an image, real name, hero name, height, weight, special power, intelligence, strength, power, speed, agility, description, and story.
-
-
      */
 
     @Test
     public void testHeroByName() throws Exception {
-
-
         mockMvc.perform(get("/heros/spiderman"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.image").value("https://images.app.goo.gl/2DA4HoPcxj8xaXB6A"))
                 .andExpect(jsonPath("$.realName").value("Peter Parker"))
-                .andExpect(jsonPath("$.heroName").value("spiderman"))
-
-        ;
-
+                .andExpect(jsonPath("$.heroName").value("spiderman"));
     }
 
     @Test
     public void testHeroByName_thatDoesntExist() throws Exception {
-
-
-        mockMvc.perform(get("/heros/ofe"))
-                .andExpect(status().isOk())
-
-        ;
-
+        System.out.println(mockMvc.perform(get("/heros/ofe")).andExpect(status().isNotFound()).andReturn().getResponse().getContentAsString());
     }
 
 
