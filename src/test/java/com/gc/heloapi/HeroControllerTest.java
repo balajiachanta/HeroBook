@@ -1,10 +1,8 @@
-package com.gc.heloapi.HeroBook;
+package com.gc.heloapi;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -16,6 +14,9 @@ public class HeroControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+
+
 
     /*
     List all hero names  - Get Api which return all heros
@@ -40,14 +41,13 @@ public class HeroControllerTest {
     public void testHeroByName() throws Exception {
 
 
-        mockMvc.perform(get("/heros/{name}"))
+        mockMvc.perform(get("/heros/spiderman"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("superman"))
-                .andExpect(jsonPath("$.name").value("superman"))
-                .andExpect(jsonPath("$.name").value("superman"))
-                .andExpect(jsonPath("$.name").value("superman"))
-                .andExpect(jsonPath("$.name").value("superman"))
-                .andExpect(jsonPath("$.name").value("superman"));
+                .andExpect(jsonPath("$.image").value("https://images.app.goo.gl/2DA4HoPcxj8xaXB6A"))
+                .andExpect(jsonPath("$.realName").value("Peter Parker"))
+                .andExpect(jsonPath("$.heroName").value("spiderman"))
+
+        ;
 
     }
 

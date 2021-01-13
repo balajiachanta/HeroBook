@@ -1,4 +1,4 @@
-package com.gc.heloapi.HeroBook;
+package com.gc.heloapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

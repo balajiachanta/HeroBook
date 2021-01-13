@@ -1,4 +1,4 @@
-package com.gc.heloapi.HeroBook;
+package com.gc.heloapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

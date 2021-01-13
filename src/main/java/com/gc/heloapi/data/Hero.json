@@ -1,0 +1,32 @@
+[
+  {
+    "image": "https://images.app.goo.gl/EgiM5wmHhu1hXRQ2A",
+    "realName": "Clark Joseph Kent",
+    "heroName": "superman",
+    "height": 6.2,
+    "weight": 200.5,
+    "specialPower": "flying",
+    "intelligence": 150.5,
+    "strength": 2000.5,
+    "power": "x-ray vision",
+    "speed": 2000,
+    "agility": "flying kick",
+    "description": "hero has a big S in front of his suit, he came from a different planet",
+    "story": "superman story"
+  },
+  {
+    "image": "https://images.app.goo.gl/2DA4HoPcxj8xaXB6A",
+    "realName": "Peter Parker",
+    "heroName": "spiderman",
+    "height": 6.0,
+    "weight": 170.5,
+    "specialPower": "web flying",
+    "intelligence": 170.2,
+    "strength": 1000,
+    "power": "web flying",
+    "speed": 250,
+    "agility": "wall crawling",
+    "description": "Spider-Man has spider-like abilities including superhuman strength and the ability to cling to most surfaces. He is also extremely agile and has amazing reflexes. Spider-Man also has a “spider sense,” that warns him of impending danger. Spider-Man has supplemented his powers with technology.",
+    "story": "spiderman story"
+  }
+]
