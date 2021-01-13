@@ -1,4 +1,4 @@
-package com.gc.heloapi;
+package com.gc;
 
 public class HeroNotFoundException extends Exception{
 

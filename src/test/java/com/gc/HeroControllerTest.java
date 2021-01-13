@@ -1,4 +1,4 @@
-package com.gc.heloapi;
+package com.gc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,9 @@ public class HeroControllerTest {
 
     @Test
     public void testHeroByName_thatDoesntExist() throws Exception {
-        System.out.println(mockMvc.perform(get("/heros/ofe")).andExpect(status().isNotFound()).andReturn().getResponse().getContentAsString());
+        System.out.println(mockMvc.perform(get("/heros/ofe")).
+                andExpect(status().isNotFound()).
+                andReturn().getResponse().getContentAsString());
     }
 
 

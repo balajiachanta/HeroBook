@@ -1,4 +1,4 @@
-package com.gc.heloapi.data;
+package com.gc.data;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,6 +1,5 @@
-package com.gc.heloapi;
+package com.gc;
 
-import com.gc.heloapi.data.Hero;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

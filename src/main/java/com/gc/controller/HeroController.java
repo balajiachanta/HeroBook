@@ -1,9 +1,8 @@
-package com.gc.heloapi.controller;
+package com.gc.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gc.heloapi.HeroNotFoundException;
-import com.gc.heloapi.data.Hero;
+import com.gc.data.Hero;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,31 +19,25 @@ import java.util.stream.Collectors;
 @RequestMapping("/heros")
 public class HeroController {
 
-
     private List<Hero> heroes;
 
     @PostConstruct
     private void initializeCustomersData() throws IOException {
         heroes = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
-        File heroFilePath = new File("src/main/java/com/gc/heloapi/data/Hero.json");
+        File heroFilePath = new File("src/main/java/com/gc/data/Hero.json");
         heroes = mapper.readValue(heroFilePath, new TypeReference<List<Hero>>() {});
     }
 
     @GetMapping
     public List<String> listHerosNames() {
-
         return heroes.stream().map(hero -> hero.getHeroName()).collect(Collectors.toList());
     }
 
     @GetMapping(value = "/{name}")
     public Hero getHeroByName(@PathVariable String name) {
-
-            return heroes.stream().filter(hero -> hero.getHeroName().equals(name)).findFirst().get();
-
-
+        return heroes.stream().filter(hero -> hero.getHeroName().equals(name)).findFirst().get();
     }
-
 
 
 
