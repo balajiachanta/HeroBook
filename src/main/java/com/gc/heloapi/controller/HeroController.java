@@ -2,6 +2,7 @@ package com.gc.heloapi.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gc.heloapi.HeroNotFoundException;
 import com.gc.heloapi.data.Hero;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,9 +38,14 @@ public class HeroController {
     }
 
     @GetMapping(value = "/{name}")
-    public Hero getHeroByName(@PathVariable String name) {
+    public Hero getHeroByName(@PathVariable String name) throws HeroNotFoundException {
 
-        return heroes.stream().filter(hero -> hero.getHeroName().equals(name)).findFirst().get();
+            return heroes.stream().filter(hero -> hero.getHeroName().equals(name)).findFirst().get();
+
+
     }
+
+
+
 
 }

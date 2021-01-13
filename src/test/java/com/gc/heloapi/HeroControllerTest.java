@@ -51,5 +51,16 @@ public class HeroControllerTest {
 
     }
 
+    @Test
+    public void testHeroByName_thatDoesntExist() throws Exception {
+
+
+        mockMvc.perform(get("/heros/ofe"))
+                .andExpect(status().isOk())
+
+        ;
+
+    }
+
 
 }
