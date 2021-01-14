@@ -3,6 +3,7 @@ package com.gc.controller;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gc.data.Hero;
+import com.gc.exception.GenericNotFoundException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,8 +36,10 @@ public class HeroController {
     }
 
     @GetMapping(value = "/{name}")
-    public Hero getHeroByName(@PathVariable String name) {
-        return heroes.stream().filter(hero -> hero.getHeroName().equals(name)).findFirst().get();
+    public Hero getHeroByName(@PathVariable String name) throws  GenericNotFoundException {
+        return heroes.stream().filter(hero -> hero.getHeroName().equals(name)).
+                findFirst().
+                orElseThrow(() -> new GenericNotFoundException("Hero does not Exist"));
     }
 
 

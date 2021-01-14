@@ -2,8 +2,8 @@ package com.gc.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gc.data.Hero;
 import com.gc.data.Villan;
+import com.gc.exception.GenericNotFoundException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,8 +36,9 @@ public class VillanController {
     }
 
     @GetMapping(value = "/{name}")
-    public Villan getVillanByName(@PathVariable String name) {
-        return villans.stream().filter(villan -> villan.getVillanName().equals(name)).findFirst().get();
+    public Villan getVillanByName(@PathVariable String name) throws GenericNotFoundException {
+        return villans.stream().filter(villan -> villan.getVillanName().equals(name)).
+                findFirst().orElseThrow(() -> new GenericNotFoundException("Villain Does Not Found"));
     }
 
 

@@ -6,8 +6,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest
 public class HeroControllerTest {
@@ -43,9 +43,15 @@ public class HeroControllerTest {
 
     @Test
     public void testHeroByName_thatDoesntExist() throws Exception {
-        System.out.println(mockMvc.perform(get("/heros/ofe")).
+      /*  System.out.println(mockMvc.perform(get("/heros/ofe")).
                 andExpect(status().isNotFound()).
-                andReturn().getResponse().getContentAsString());
+                andReturn().getResponse().getContentAsString());*/
+
+
+        mockMvc.perform(get("/heros/ofe"))
+                //.andDo(print())
+                .andExpect(status().isNotFound())
+                .andExpect(content().string("Hero does not Exist"));
     }
 
 
