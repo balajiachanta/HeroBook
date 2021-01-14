@@ -1,0 +1,32 @@
+[
+  {
+    "image": "https://images.app.goo.gl/pavrYNWZVrgrbyB37",
+    "realName": "Jack Napier",
+    "villanName": "joker",
+    "height": 6.2,
+    "weight": 200.5,
+    "specialPower": "laughing",
+    "intelligence": 150.5,
+    "strength": 2000.5,
+    "power": "Thematic weaponry",
+    "speed": 2000,
+    "agility": "flying kick",
+    "description": "hero has a big S in front of his suit, he came from a different planet",
+    "story": "joker story"
+  },
+  {
+    "image": "https://images.app.goo.gl/mvFn194Zko5QZB9s6",
+    "realName": "Josh Brolin Damion Poitier",
+    "villanName": "thanos",
+    "height": 6.0,
+    "weight": 170.5,
+    "specialPower": "telekenesis",
+    "intelligence": 170.2,
+    "strength": 1000,
+    "power": "telepathy",
+    "speed": 250,
+    "agility": "wall crawling",
+    "description": "He changes different colors",
+    "story": "Thanos story"
+  }
+]
