@@ -1,44 +1,31 @@
 package com.gc.controller;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gc.data.Villan;
 import com.gc.exception.GenericNotFoundException;
+import com.gc.service.GenericService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/villans")
 public class VillanController {
 
-    private List<Villan> villans;
-
-    @PostConstruct
-    private void initializeCustomersData() throws IOException {
-        villans = new ArrayList<>();
-        ObjectMapper mapper = new ObjectMapper();
-        File heroFilePath = new File("src/main/java/com/gc/data/villan.json");
-        villans = mapper.readValue(heroFilePath, new TypeReference<List<Villan>>() {});
-    }
+    @Autowired
+    private GenericService genericService;
 
     @GetMapping
     public List<String> listVillanNames() {
-        return villans.stream().map(villan -> villan.getVillanName()).collect(Collectors.toList());
+        return genericService.listVillanNames();
     }
 
     @GetMapping(value = "/{name}")
     public Villan getVillanByName(@PathVariable String name) throws GenericNotFoundException {
-        return villans.stream().filter(villan -> villan.getVillanName().equals(name)).
-                findFirst().orElseThrow(() -> new GenericNotFoundException("Villain Does Not Found"));
+        return genericService.getVillanByName(name);
     }
 
 

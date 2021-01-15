@@ -1,25 +1,29 @@
 package com.gc.data;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+public class Villan extends MovieStar{
 
-@Data
-@EqualsAndHashCode
-public class Villan {
+    private String archRival;
+    private String image;
+    private String realName;
+    private String villanName;
+    private double height;
+    private double weight;
+    private String specialPower;
+    private double intelligence;
+    private double strength;
+    private String power;
+    private double speed;
+    private String agility;
+    private String description;
+    private String story;
 
-          private String  image  ;
-          private String  realName;
-          private String  villanName;
-          private double  height;
-          private double  weight;
-          private String  specialPower;
-          private double  intelligence;
-          private double  strength;
-          private String  power;
-          private double  speed;
-          private String  agility;
-          private String  description;
-          private String  story;
+    public String getArchRival() {
+        return archRival;
+    }
+
+    public void setArchRival(String archRival) {
+        this.archRival = archRival;
+    }
 
     public String getImage() {
         return image;

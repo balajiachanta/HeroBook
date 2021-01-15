@@ -1,25 +1,20 @@
 package com.gc.data;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+public class Hero extends MovieStar {
 
-@Data
-@EqualsAndHashCode
-public class Hero {
-
-          private String  image  ;
-          private String  realName;
-          private String  heroName;
-          private double  height;
-          private double  weight;
-          private String  specialPower;
-          private double  intelligence;
-          private double  strength;
-          private String  power;
-          private double  speed;
-          private String  agility;
-          private String  description;
-          private String  story;
+    private String image;
+    private String realName;
+    private String heroName;
+    private double height;
+    private double weight;
+    private String specialPower;
+    private double intelligence;
+    private double strength;
+    private String power;
+    private double speed;
+    private String agility;
+    private String description;
+    private String story;
 
 
     public String getImage() {

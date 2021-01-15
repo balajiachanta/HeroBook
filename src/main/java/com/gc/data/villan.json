@@ -1,5 +1,7 @@
 [
   {
+    "id": "v01",
+    "archRival": "batman",
     "image": "https://images.app.goo.gl/pavrYNWZVrgrbyB37",
     "realName": "Jack Napier",
     "villanName": "joker",
@@ -15,6 +17,8 @@
     "story": "joker story"
   },
   {
+    "id": "v02",
+    "archRival": "thor",
     "image": "https://images.app.goo.gl/mvFn194Zko5QZB9s6",
     "realName": "Josh Brolin Damion Poitier",
     "villanName": "thanos",
